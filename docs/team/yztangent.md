@@ -40,9 +40,10 @@ FinBook is optimized for use via a Command Line Interface (CLI), which means mos
         * Meeting location will be automatically deciphered as online or in-person by Finbook using URL recognition. Any addressed that is passed to Finbook that is a valid URL will be categorised as an online meeting.
 
 * **Contributions to the UG**:
-    * Add remove command and its usage details to the UG
+    * Add `remove` command and its usage details to the UG
     * Update list of prefixes to include meeting location
-    * Update edit command to reflect its new behaviour
+    * Update `edit` command to reflect its new behaviour
+    * Update `add` command to include Meeting Location and additional notes for its usage
     * Add labelled diagrams to illustrate the difference between hidden and shown mode and highlight its toggle button
     * Add labelled diagrams to highlight the  toggle button to switch between dark and light mode
 
@@ -56,19 +57,22 @@ FinBook is optimized for use via a Command Line Interface (CLI), which means mos
     * **Code Refactorization**: Refactor code for optional attributes in Person class to make use of Java's Optional abstraction
       * What is does: Using the java Optional abstraction allows us to refactor many checks for empty (or null) values for these optional attributes into the attribute class itself
       * Justification: There are many places in the code which requires a check for null values for optional attributes, which is a violation of Don't Repeat Yourself (DRY) principle. By abstracting out all these checks into the attribute class with the use of the Optional abstraction provided by the Java utils library, we are able to closely adhere to good coding principles.
+    * Highlight:
+        * The existence check of these optional attributes are handled by the attribute class themselves, using the `Optional#orElse` method, which returns a default value that can be used directly (instead of `null`) if the optional attribute is empty.
+        * The use of Java Optional abstractions in the implementation of optional attributes is not exposed to external classes due to its private access modifier. This prevents other classes from accessing the Java Optional object by accident.
 
 * **Review/mentoring contributions**:
     * Helped to review pull requests from teammates. (E.g. PR Reviewd: [Sort command #88](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/137))
 
 * **Contributions beyond the project team**:
     * Reported bugs and suggestions for other teams. 
-    * Issues: 
-      * [Headers not visible on startup #137](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/137),
-      * [Sample input for addtut in the app is invalid due to incorrect time format #149](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/149),
-      * [Example input for Deleting a tutorial command contains a typo #155](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/155),
-      * [Unable to view questions longer than the text box can display #165](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/165),
-      * [Dates from 29th Feb to 31Feb are taken as valid inputs but are parsed as 28th Feb #173](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/173),
-      * [Deprecated commands and data still present #175](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/175)
+        * Issues reported: 
+            * [Headers not visible on startup #137](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/137),
+            * [Sample input for addtut in the app is invalid due to incorrect time format #149](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/149),
+            * [Example input for Deleting a tutorial command contains a typo #155](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/155),
+            * [Unable to view questions longer than the text box can display #165](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/165),
+            * [Dates from 29th Feb to 31Feb are taken as valid inputs but are parsed as 28th Feb #173](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/173),
+            * [Deprecated commands and data still present #175](https://github.com/AY2223S1-CS2103T-T08-4/tp/issues/175)
 
     
 
